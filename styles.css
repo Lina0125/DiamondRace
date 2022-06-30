@@ -1,0 +1,80 @@
+﻿.center {
+    text-align: center
+}
+
+#head-start {
+    top: -10%;
+    left: -3.5%;
+    position: absolute;
+}
+
+#head-end {
+    top: -10%;
+    left: 97.5%;
+    position: absolute;
+}
+
+.grids {
+    position: absolute;
+    left: 4%;
+    width: 1400px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.game-grid {
+    position: absolute;
+    top: 15%;
+    left: 4%;
+    width: 600px;
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.diamond {
+    width: 60px;
+    height: 60px;
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.score-grid {
+    position: absolute;
+    top: 15%;
+    left: 70%;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.score-bar {
+    border-radius: 10px;
+    width: 70px;
+    height: 20px;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.score {
+    position: absolute;
+    font-weight: bold;
+}
+
+#reset-button {
+    border-radius: 20px;
+    font-weight: bold;
+    position: absolute;
+}
+
+#score-head {
+    top: 20%;
+    position: absolute;
+}
+
+
