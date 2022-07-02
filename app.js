@@ -34,6 +34,8 @@ class Score {
     }
 }
 
+let diamonds
+let scores
 const colorArray = ['blue', 'green', 'red', 'yellow']
 const gameGrid = document.querySelector('.game-grid')
 const scoreGrid = document.querySelector('.score-grid')
@@ -65,9 +67,9 @@ function drawScoreBar() {
 drawScoreBar()
 
 function moveDiamond() {
-    let diamondId = this.getAttribute('data-id')
-    let previousPosition = Number(this.style.left.substr(0, this.style.left.length - 2))
-    let currentScore = Number(scores[diamondId].textContent)
+    const diamondId = this.getAttribute('data-id')
+    const previousPosition = Number(this.style.left.substr(0, this.style.left.length - 2))
+    const currentScore = Number(scores[diamondId].textContent)
     if (currentScore < 10) {
         this.style.left = previousPosition + diamondWidth + 'px'
         scores[diamondId].textContent = currentScore + 1
@@ -79,19 +81,18 @@ function moveDiamond() {
 }
 
 function startGame() {
-    diamondsArray.forEach(diamondsArray => gameGrid.appendChild(diamondsArray.initiateDiamond()))
-    scoresArray.forEach(scoresArray => scoreGrid.appendChild(scoresArray.initiateScore()))
-    //These two should be global var
+    diamondsArray.forEach(diamond => gameGrid.appendChild(diamond.initiateDiamond()))
+    scoresArray.forEach(score => scoreGrid.appendChild(score.initiateScore()))
     diamonds = document.querySelectorAll('.diamond')
     scores = document.querySelectorAll('.score')
-    diamonds.forEach(diamonds => diamonds.addEventListener('click', moveDiamond))
+    diamonds.forEach(diamondChild => diamondChild.addEventListener('click', moveDiamond))
 }
 
 startGame()
 
 function playAgain() {
     //Clean global var
-    diamonds.forEach(diamonds => diamonds.remove())
-    scores.forEach(scores => scores.remove())
+    diamonds.forEach(diamondChild => diamondChild.remove())
+    scores.forEach(scoreChild => scoreChild.remove())
     startGame()
 }
