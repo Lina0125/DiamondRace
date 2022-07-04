@@ -91,7 +91,6 @@ function startGame() {
 startGame()
 
 function playAgain() {
-    //Clean global var
     diamonds.forEach(diamondChild => diamondChild.remove())
     scores.forEach(scoreChild => scoreChild.remove())
     startGame()
